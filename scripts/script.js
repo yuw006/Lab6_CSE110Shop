@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 	var dataList;
 	var addedItems=new Array(20).fill(false);
-	function getRequest(){
+
 	fetch('https://fakestoreapi.com/products')
 		.then(response => response.json())
 		.then(data => {
@@ -11,11 +11,9 @@ window.addEventListener('DOMContentLoaded', () => {
 			localStorage.setItem("data", JSON.stringify(data));
 			}
 		)
-	}
-	async function getData(){
-		var result = await getRequest();
-	}
-	getData();
+		.then( () => { shop();} );
+		      
+	function shop(){
 	var productContainer = document.getElementById("product-list");
 	
 	var cartCount = document.getElementById("cart-count");
@@ -68,5 +66,6 @@ window.addEventListener('DOMContentLoaded', () => {
 			event.preventDefault();
 
 		}, false);
+	}
 	}
 });
