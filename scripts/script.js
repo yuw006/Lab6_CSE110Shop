@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		buttons[i] = product.shadowRoot.childNodes[3].childNodes[7];
 		if( addedItems2[i] == true ){
 			buttons[i].innerHTML = "Remove from Cart";
+			buttons[i].onclick = function() {alert('Removed from Cart')};
 			addedItems[i] = true;
 			numInCart++;
 		}
@@ -44,11 +45,13 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 			if( !added ){
 				buttons[i].innerHTML = "Remove from Cart";
+				buttons[i].onclick = function() {alert('Removed from Cart')};
 				addedItems[i] = true;
 				num++;
 			}
 			else{
 				buttons[i].innerHTML = "Add to Cart";
+				buttons[i].onclick = function() {alert('Addd to Cart')};
 				addedItems[i] = false;
 				num--;
 			}
