@@ -9,7 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
 			console.log(data);
 			localStorage.setItem("data", JSON.stringify(data));
 			}
-		);
+		)
+	.then(
 	var productContainer = document.getElementById("product-list");
 	
 	var cartCount = document.getElementById("cart-count");
@@ -63,4 +64,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		}, false);
 	}
+	);
 });
