@@ -25,11 +25,13 @@ window.addEventListener('DOMContentLoaded', () => {
 		product.shadowRoot.childNodes[3].childNodes[1].src = items[i].image;
 		product.shadowRoot.childNodes[3].childNodes[1].alt = items[i].description;
 		buttons[i] = product.shadowRoot.childNodes[3].childNodes[7];
+		if( addedItems2 ){
 		if( addedItems2[i] == true ){
 			buttons[i].innerHTML = "Remove from Cart";
 			buttons[i].onclick = function() {alert('Removed from Cart')};
 			addedItems[i] = true;
 			numInCart++;
+		}
 		}
 		productContainer.appendChild(product);
 	}
